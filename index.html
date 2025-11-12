@@ -14,6 +14,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            background-color: #0891b0;
+        }
+
+        h1, 
+        p {
+            color: white;
         }
 
         p {
@@ -24,11 +30,12 @@
 </head>
 
 <body>
-    <h1>Countdown &#10084;</h1>
-    <p id="demo"></p>
-
+    <h1>Countdown </h1>
+    <p id="countdown"></p>
+    <h1>&#10084;</h1>
+    
     <script>
-        const countDownDate = new Date("Nov 02, 2023 10:00:00").getTime();
+        const countDownDate = new Date("Nov 25, 2025 17:30:00").getTime();
         const interval = setInterval(function () {
             const now = new Date().getTime();
             const distance = countDownDate - now;
@@ -39,12 +46,12 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("demo").innerHTML = weeks + "w " + days + "d " + hours + "h "
+            document.getElementById("countdown").innerHTML = weeks + "w " + days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
 
             if (distance < 0) {
                 clearInterval(interval);
-                document.getElementById("demo").innerHTML = "Let's Kiss";
+                document.getElementById("countdown").innerHTML = "Let's Kiss";
             }
         }, 1000);
     </script>
